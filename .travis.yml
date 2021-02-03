@@ -1,0 +1,9 @@
+dist: xenial
+addons:
+  sonarcloud:
+    organization: "unne-sonar-corpus"
+    token: SONAR_TOKEN
+script:
+  - mvn clean verify sonar:sonar -Pcoverage -Dsonar.projectKey=unne.sonar:jspwiki
+notifications:
+  email: false
