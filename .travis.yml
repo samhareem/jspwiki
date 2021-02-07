@@ -1,9 +1,12 @@
 dist: xenial
 addons:
   sonarcloud:
-    organization: "unne-sonar-corpus"
+    organization: unne-sonar-corpus
     token: SONAR_TOKEN
 script:
   - mvn clean verify sonar:sonar -Pcoverage -Dsonar.projectKey=unne.sonar:jspwiki
 notifications:
   email: false
+env:
+  global:
+    secure: C2hlJOMQMs7Xct2Urnj58bNFqcQE+QjSh/Ee2/zAXUDqXxB3KjUmimVcGrmnSw/5QBUF9/nfsJXM4vidjHKo3WyYscpmdb3OeBW5OXEEWJ3SsX0x6AJtOydAbc8E9RCVUAyQ2SlULEIb7UUUk2msdKgChRogJBlwfninV8qs85NwkNaJIlt6NeK/NE7bgKxW4Ij6QmjhOUz4KI/1N45s4IMAgkMRyNyG/xVmYvPbvdgL8iRanBLlyEsDHsa9vI7hiQoZ+dc+zWdiClxZDV9xV5REW/xoYo3PWRmDB1RxKEGE/I+d0zIwCfHJVQaCMSo8UkgHoDOcXU/Q+orYH3pd6NpD4O8z2l959Z7LpadRCb9XF2/o2/ovSZ9kfBZ03o2+ENRvIvXS1LDniPm6SxaL9NZj1aB9nE5HwuaP36tTdw1Svr12q0B+YRnz6XsF4BnJgJ8lzsuNIs8pf20X+t+ECgHLehDardpaVyiEIocnYmB2ZL71Xx5QmQXwJOr9tIX16g5bWvRi6+gy+d0EsDnIg/eP5QOci9b4oU9hyHsRX79+bArnpu3yL+h8vnG4YTeXKSHizvhNAQUSAZLW2LERJDA/8c0a4mXj+AjZBtLCAkspA8d+/ShUl1P7AMUs2ocjTc2ow5L8zICLSg0jVqIud5JmyytirwAfOrlK8kcY00w=
