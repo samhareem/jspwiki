@@ -5,7 +5,7 @@ addons:
     token:
       secure: UA8IRQ+nnZL3IAVI6r8QSYHP6COq7DxhxVYoD78maJzVMtKzlFEzzowViEL+l+4GjBEFLu2VXmw8PEOVio+Z/QZFbRl6Z6/V8U3Dwcn1jTVlpEMhXDkrCFNGxJsoCpt2XqH+ny04X1cXlhsSk/3EnhlH0qkcsid3U4aoeImSkyjDX8bszvWWLyPGxenjiABQepFiZt5zPq99q+atcmQxdgu4eemyuSyUgAGT8oZdltJl2CsxFyohQteT91SPSRIYiGwb3KFovj9YbZDV5Vgx71Wze6wTp+ESpuim5f4rWh5jTWYZiFAIBrFhRytaKxvNFv56ePoyp4P67gNWuXSvYOvtdEfLJU+aK/wIonVUhuE6EIcdFuRBEJxyKaQN2oC2YIBV/2kTaNUt6kSz5eiTsab9vBEpd+BsvyTz/4ow6H8pPAIHCm0ayKmxNG4avVMuroAZmHW4PyRG7+yzFf0YmUGqMtIQPUwhyolv/KsG1Ue1VzR+v+JrzwnkAfOSAYePvFP2Zx1MSQAm86S1fQUeuidoCUJXe9Iqtx37dAm6u/mgnxWvAT9ng096X03HW+1VrsYoJjHq7eSB9I9RqdG/T2h/87HPI9POQs9+96dKOg36YmlWodKgnhil7XVQ1hbf/aEFImxXp86/zMUT/QkIE/2j9tEaZdAuEGWDhibOGXY=
 script:
-  - mvn clean verify sonar:sonar -Pcoverage -Dsonar.projectKey=unne.sonar:jspwiki -Dsonar.login=$SONAR_TOKEN
+  - mvn clean verify sonar:sonar -Pcoverage -Dsonar.projectKey=unne.sonar:jspwiki -Dsonar.login=SONAR_TOKEN
 notifications:
   email: false
 env:
