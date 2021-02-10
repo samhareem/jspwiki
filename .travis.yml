@@ -1,4 +1,7 @@
 dist: xenial
+language: java
+jdk:
+  - openjdk11
 addons:
   sonarcloud:
     organization: unne-sonar-corpus
