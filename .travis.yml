@@ -7,4 +7,7 @@ addons:
       secure: "GCxqh9VTiQbUQbSgtTIV/PQmGDfznaHGVOyiXyN6afgMIKFdZEDIANZm/YXLeSl9U51AYqyYm3LK97eBWuz483eTmLc2nqacllCfwyw7szWAF4jhuh+ah4fE0n4FDCjrCkumkFI1Vv2qCuthhyZiiK3WIEseBpJ9BJ6R/lJ1g/dKS6BUrVnqi9qfirSxepBLo9u7pXOa7XHXvDWUQP1mB0smcBy+wpsJWsC/U6IAu8R8sH1AtcWEoT/C/rtXlgmgvLOGjFrFeMS3AsrXRwKXOUidRMolP0c2olOenbkvAt7RHJkWB2kGD9r0XyKGO5RHJCMSACslHMRkNuFUXzh7S9CL6neYK+dpjMTx0EhCdXql8zXAzU6TQ0n00WETJ89BcIXMiIG2lntFFnS52GOcFFsrOZlMgC1k9xRSk3qen/uFXgLT+5KlI5nThIWNKauW3DapeJ+peCoSwGnvimlxekAjDl16T9IeRR9xuSLTCERJ6sixjZEtkaBJorXmMLpX9H6naMZUWKBAUKRv9HRLKoAa7HDwzSlkAT+SJoxUO6SZgPJQIt0rLoZhU5rc33/bDPxbkyVclEuKf7HOdPtzQfP1rFzRvfThUwPft/rolRUAbHsR8b2Q88yRZRF6EWI2UQOs0A0GmzLidxxXgKqfHM1usYmyoHXbp99EgTsr+Ps=" # encrypted value of your token
 
 script:
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=samhareem_jspwiki -Dsonar.projectKey=samhareem_jspwiki
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=samhareem_jspwiki
+
+notifications:
+  email: false
