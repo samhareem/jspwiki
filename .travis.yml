@@ -1,7 +1,10 @@
-dist: xenial
-language: java
-jdk:
-  - openjdk11
+matrix:
+  include:
+    - language: java
+      jdk:
+        - openjdk11
+    - language: node.js
+      node_js: "12.0"
 
 addons:
   sonarcloud:
