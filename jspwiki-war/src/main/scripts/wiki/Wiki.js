@@ -829,7 +829,8 @@ var Wiki = {
     insertPage: function( element ){
 
         var onceCookie = element.getAttribute("data-once"),
-            okButton = ".btn.btn-success";
+            okButton = ".btn.btn-success",
+            cancelButton = "btn.btn-danger";
 
         //do not handle the notification (and cookie) when this is the inserted-page itself
         if( onceCookie.test( RegExp( "." + Wiki.PageName.replace(/\s/g,"%20")+"$" ) ) ){
@@ -840,12 +841,28 @@ var Wiki = {
         if( !element.getElement( okButton ) ){
             element.appendChild([
                 "div.modal-footer", [
-                    "button.btn.btn-success", { text: "dialog.confirm".localize() }                            ]
+                    "button.btn.btn-success", { text: "dialog.confirm".localize() }]
             ].slick());
         }
 
         element.getElement( okButton ).addEvent("click", function(){
             $.cookie( onceCookie, Date() );   //register the current timestamp
+            element.remove();
+        });
+
+        if( !element.getElement( cancelButton ) ){
+            element.appendChild([
+                "div.modal-footer", [
+                    "button.btn.btn-danger", { text: "essential.cookies".localize() }]
+            ].slick());
+        }
+
+        element.getElement( okButton ).addEvent("click", function(){
+            $.cookie( onceCookie, Date() );   //register the current timestamp
+            element.remove();
+        });
+
+        element.getElement( cancelButton ).addEvent("click", function(){
             element.remove();
         });
 
