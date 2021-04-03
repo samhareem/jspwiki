@@ -270,6 +270,7 @@ public abstract class AbstractUserDatabase implements UserDatabase {
      * @return the result hash
      * @deprecated this method is retained for backwards compatibility purposes; use {@link #getHash(String, String)} instead
      */
+    @Deprecated
     String getShaHash(final String text ) {
         try {
             final MessageDigest md = MessageDigest.getInstance( "SHA" );
