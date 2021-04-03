@@ -211,14 +211,14 @@ public final class CryptoUtil
                 .getBytes( StandardCharsets.UTF_8 ) );
 
         // Extract the password hash and salt
-        final byte[] passwordHash = extractPasswordHash( challenge, algorithm == SSHA ? 20 : 32 );
-        final byte[] salt = extractSalt( challenge, algorithm == SSHA ? 20 : 32  );
+        final byte[] passwordHash = extractPasswordHash( challenge, algorithm.equals(SSHA) ? 20 : 32 );
+        final byte[] salt = extractSalt( challenge, algorithm.equals(SSHA) ? 20 : 32  );
 
         // Re-create the hash using the password and the extracted salt
         // The term SSHA is used as a password prefix for backwards compatibility, but we use SHA-1 when fetching an instance
         // of MessageDigest, as it is the guaranteed option. We also need to remove curly braces surrounding the string for
         // backwards compatibility.
-        String algorithmToUse = algorithm == SSHA ? SHA1 : algorithm;
+        String algorithmToUse = algorithm.equals(SSHA) ? SHA1 : algorithm;
         final MessageDigest digest = MessageDigest.getInstance( algorithmToUse.substring( 1, algorithmToUse.length() -1 ) );
         digest.update( password );
         final byte[] hash = digest.digest( salt );
